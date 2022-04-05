@@ -1,4 +1,3 @@
-
 //Global Variables
 int reset, smallerDisplayDimension, mouthOpen;
 float rectFaceX, rectFaceY, rectFaceWidth, rectFaceHeight;
@@ -64,41 +63,31 @@ rect(rectFaceX, rectFaceY, rectFaceWidth, rectFaceHeight);
 ellipse(faceX, faceY, faceDiameter, faceDiameter);
 //
 //Left Eye
-rect(leftEyeX-eyeDiameter*1/2, leftEyeY-eyeDiameter*1/2, eyeDiameter, eyeDiameter);
+//rect();
 ellipse(leftEyeX, leftEyeY, eyeDiameter, eyeDiameter);
 //
 //Right Eye
-rect(rightEyeX-eyeDiameter*1/2, rightEyeY-eyeDiameter*1/2, eyeDiameter, eyeDiameter);
+//rect();
 ellipse(rightEyeX, rightEyeY, eyeDiameter, eyeDiameter);
 //
 //Nose
-rect(xNose2, yNose1, xNose3-xNose2, yNose3-yNose1);
+//rect();
 triangle(xNose1, yNose1, xNose2, yNose2, xNose3, yNose3);
 //
 //
 //Mouth
-int mouthWidth = int (mouthX2 - mouthX1);
-int mouthHeight = mouthOpen;
-rect(mouthX1-mouthOpen*1/2, mouthY1=mouthOpen*1/2, mouthWidth+mouthOpen, mouthHeight);
+//rect();
 strokeWeight(mouthOpen);
 line(mouthX1, mouthY1, mouthX2, mouthY2);
 strokeWeight(reset);//
-//comparison rect() line only, no caps, no strookeWeight
-//rect(mouthX1, mouthY1, mouthWidth, mouthHeight);
 //
 //Measle
 float measleDiameter = random( smallerDisplayDimension*1/100 , smallerDisplayDimension*1/25);
 float measleRadius = measleDiameter*1/2;
+println ((appWidth*0)+(measleDiameter*1/2));
 float measleX = random( rectFaceX+measleRadius , (( rectFaceX+rectFaceWidth ) - measleRadius) );
 float measleY = random( rectFaceY+measleRadius , (( rectFaceY+rectFaceHeight) -  measleRadius) );
-Boolean nightMode=false; //Note: IF-ELSE similar to ternary operator
-//color red=#FF0000,measleColour=red, whiteReset = #FFFFFF;
-color measleColour = ( nightMode==false ) ? color ( 255, 0, random(0,50), random(120) ) : color( 255, random(0,50), 0 ) ; //ternary operator for day:night
-//
-color whiteReset = #000000;
-//
-//
-//
+color red=#FF0000,measleColour=red, whiteReset = #FFFFFF;
 //rect();
 noStroke(); //Shape outline
 fill(measleColour);
